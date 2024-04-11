@@ -5,29 +5,28 @@ fn bubble_sort() {
 
 }
 
-fn binary_search(arr: &mut [i32]) {
-    let L = 0;
-    let R = (arr.len() - 1);
-    let T = arr.iter().max();
+fn binary_search(arr: &[usize],find:usize) -> Option {
+    let mut L = 0;
+    let mut Length = arr.len();
+    let mut H = Length / 2;
+    let mut R = Length - 1; 
+    let mut current = arr[half];  
 
-    While L <= R{
-        let M = ((L + R).floor() / 2);
-        let check = if arr[M] < T;{
-            L = M - 1;
-        } else if arr[m] > T {
-            R = M -1;
-        }else {
-            return M;
+    while L <= R {
+        if current == find {
+            return Some(half)
         }
-        let even = arr[L] = T {
-            return L;
+        else if current < find{ lind = half + 1; } else if current > find {
+            R = H -1;
         }
-      return "unseccessful"
+        H = (H + L ) / 2;
+        current = arr[H];
     }
+    return None;
 }
 
 fn main() {
-    let mut arr: [i32, 5] = [1,6,2,7,8];
+    let mut arr: [i32; 5] = [1,6,2,7,8];
 
 
     binary_search(&mut arr);
